@@ -1,21 +1,18 @@
 #!/usr/bin/env python2
 
-import os
-import sys
-import pwd
-import grp
+import sys, os
+import pwd, grp
+import gi
+gi.require_version('Gtk', '3.0')
+gi.require_version('AccountsService', '1.0')
+from gi.repository import Gtk, GObject, Gio, GdkPixbuf, AccountsService
 import gettext
 import shutil
-import re
-import subprocess
-from random import randint
-
 import PIL
 from PIL import Image
-import gi
-gi.require_version("Gtk", "3.0")
-gi.require_version("AccountsService", "1.0")
-from gi.repository import Gtk, GObject, Gio, GdkPixbuf, AccountsService
+from random import randint
+import re
+import subprocess
 
 gettext.install("cinnamon", "/usr/share/locale")
 
